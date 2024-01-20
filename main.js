@@ -1,12 +1,14 @@
 console.log("Connected!")
 // YOU WILL MODIFY THIS FUNCTION TO GET THE PROGRAM TO WORK
-const wordCounter = (value) => {
-  // Type into the input and press submit, you will see the value you entered in your console
-  console.log(value);
+let darkMode = false
 
+const wordCounter = (value) => {
   if (value) {
+    const arrayOfWords = value.split(' ');
+    console.log(arrayOfWords)
+    const filteredArray = arrayOfWords.filter(str => str !== '');
     // COMPLETE THE LOGIC 
-    wordCount.innerHTML = `Word Count: 0`; 
+    wordCount.innerHTML = `Word Count: ${filteredArray.length}`; 
   } else {
     // if the value is empty, set the error message value to "Please input text"
     error.innerHTML = ""; // UPDATE THIS
@@ -14,7 +16,13 @@ const wordCounter = (value) => {
 }
 
 // OPTIONAL CHALLENGE
-const toggleMode = (btnText) => {
+const toggleMode = document.querySelector('.theme-toggle') => {
+  darkMode = !darkMode;
+  if (darkMode) {
+    document.body.classList.add('dark-mode');
+  } else {
+    document.body.classList.remove('dark-mode');
+  }
   // complete the function
 }
 

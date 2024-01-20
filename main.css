@@ -1,3 +1,16 @@
-body {
-  background-color: slateblue;
+:root {
+  --clr-dark: black;
+  --clr-light: #dff8eb;
+  ;
 }
+
+body {
+  background-color: var(--clr-dark);
+}
+
+/* @media (body) {
+  .element {
+    background-color: 12, 71, 103;
+    color: white;
+  }
+} */
